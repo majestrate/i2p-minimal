@@ -14,7 +14,7 @@ import net.i2p.util.Log;
 public class I2PTunnelHandler implements RequestHandler {
 
 
-    private static final Log _log = RouterManager.getRouterContext().logManager().getLog(I2PTunnelHandler.class);
+    //private static final Log _log = RouterManager.getRouterContext().logManager().getLog(I2PTunnelHandler.class);
 
     @Override
     public String[] handledRequests() {
@@ -35,6 +35,6 @@ public class I2PTunnelHandler implements RequestHandler {
         if ( err != null ) {
             return new JSONRPC2Response(err, request.getID());
         }
-
+        return null;
     }
 }
