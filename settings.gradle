@@ -1,2 +1,3 @@
 rootProject.name = 'i2p-minimal'
 
+include 'core', 'router', 'streaming', 'ministreaming', 'main', 'i2ptunnel', 'i2pcontrol'

@@ -1,0 +1,19 @@
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+dependencies {
+    compile project(':core')
+    compile project(':router')
+    compile 'org.eclipse.jetty:jetty-distribution:8.1.14.v20131031'
+    //testCompile project(path: ':core', configuration: 'tests')
+}
+
+jar {
+    manifest {
+    }
+}
