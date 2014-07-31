@@ -13,7 +13,3 @@ dependencies {
     //testCompile project(path: ':core', configuration: 'tests')
 }
 
-jar {
-    manifest {
-    }
-}
