@@ -2,3 +2,6 @@
 gradle/
 .gradle/
 .tx/
+*.iml
+*/build
+build
