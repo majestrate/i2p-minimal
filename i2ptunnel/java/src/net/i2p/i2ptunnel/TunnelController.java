@@ -3,10 +3,7 @@ package net.i2p.i2ptunnel;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 import net.i2p.I2PAppContext;
 import net.i2p.I2PException;
@@ -801,5 +798,34 @@ public class TunnelController implements Logging {
             _messages.clear();
         }
         return rv;
+    }
+
+    public HashMap<String, Object> getJSONStatus() {
+        HashMap<String,Object> status = new HashMap();
+        status.put("description", getDescription());
+        status.put("listenInterface", getListenOnInterface());
+        status.put("listenPort", getListenPort());
+        status.put("running", getIsRunning());
+        status.put("starting", getIsStarting());
+        status.put("standby", getIsStandby());
+        status.put("dest64", getMyDestination());
+        status.put("name", getName());
+        status.put("destb32", getMyDestHashBase32());
+        status.put("persistKey", getPersistentClientKey());
+        status.put("keyFile", getPrivKeyFile());
+        status.put("proxyList", getProxyList());
+        status.put("sharedClient", getSharedClient());
+        status.put("type", getType());
+        status.put("targetHost", getTargetHost());
+        status.put("targetPort", getTargetPort());
+        status.put("targetDest", getTargetDestination());
+        status.put("autostart", getStartOnLoad());
+        status.put("spoofedHost", getSpoofedHost());
+
+        HashMap props = new HashMap();
+        props.putAll(getClientOptionProps());
+        status.put("clientOptions", props);
+
+        return status;
     }
 }
